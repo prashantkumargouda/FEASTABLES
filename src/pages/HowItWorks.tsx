@@ -4,6 +4,12 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { ArrowRight, Plane, Package, Phone, Map, Clock, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const HowItWorks = () => {
   const [activeStep, setActiveStep] = useState(1);
@@ -76,25 +82,34 @@ const HowItWorks = () => {
           <div className="container-width px-4 md:px-6">
             <div className="max-w-5xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                {steps.map((step) => (
-                  <div 
-                    key={step.id}
-                    className={`glass-card p-6 cursor-pointer transition-all duration-300 ${
-                      activeStep === step.id ? 'ring-2 ring-primary scale-105' : 'hover:scale-102'
-                    }`}
-                    onClick={() => setActiveStep(step.id)}
-                  >
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                        activeStep === step.id ? 'bg-primary text-white' : 'bg-primary/10 text-primary'
-                      }`}>
-                        {step.icon}
+                <TooltipProvider>
+                  {steps.map((step) => (
+                    <div 
+                      key={step.id}
+                      className={`glass-card p-6 cursor-pointer transition-all duration-300 ${
+                        activeStep === step.id ? 'ring-2 ring-primary scale-105' : 'hover:scale-102'
+                      }`}
+                      onClick={() => setActiveStep(step.id)}
+                    >
+                      <div className="flex items-center gap-4 mb-4">
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                              activeStep === step.id ? 'bg-primary text-white' : 'bg-primary/10 text-primary'
+                            }`}>
+                              {step.icon}
+                            </div>
+                          </TooltipTrigger>
+                          <TooltipContent side="top">
+                            <p>{step.title}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                        <h3 className="font-semibold text-lg">Step {step.id}: {step.title}</h3>
                       </div>
-                      <h3 className="font-semibold text-lg">Step {step.id}: {step.title}</h3>
+                      <p className="text-muted-foreground">{step.description}</p>
                     </div>
-                    <p className="text-muted-foreground">{step.description}</p>
-                  </div>
-                ))}
+                  ))}
+                </TooltipProvider>
               </div>
               
               <div className="relative py-16">
@@ -102,17 +117,25 @@ const HowItWorks = () => {
                   <div className="w-full h-1 bg-muted"></div>
                 </div>
                 <div className="relative flex justify-between">
-                  {steps.map((step) => (
-                    <button
-                      key={step.id}
-                      className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                        activeStep >= step.id ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'
-                      }`}
-                      onClick={() => setActiveStep(step.id)}
-                    >
-                      {step.id}
-                    </button>
-                  ))}
+                  <TooltipProvider>
+                    {steps.map((step) => (
+                      <Tooltip key={step.id}>
+                        <TooltipTrigger asChild>
+                          <button
+                            className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                              activeStep >= step.id ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'
+                            }`}
+                            onClick={() => setActiveStep(step.id)}
+                          >
+                            {step.id}
+                          </button>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{step.title}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    ))}
+                  </TooltipProvider>
                 </div>
               </div>
             </div>
