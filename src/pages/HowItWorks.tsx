@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { ArrowRight, Plane, Package, Phone, Map, Clock, Check } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Tooltip,
   TooltipContent,
@@ -13,6 +13,7 @@ import {
 
 const HowItWorks = () => {
   const [activeStep, setActiveStep] = useState(1);
+  const navigate = useNavigate();
 
   const steps = [
     {
@@ -53,6 +54,10 @@ const HowItWorks = () => {
     }
   ];
 
+  const handleOrderNow = () => {
+    navigate('/menu');
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -71,9 +76,12 @@ const HowItWorks = () => {
               Experience the future of food delivery with our innovative drone-powered system,
               bringing you fresh home-cooked meals in record time.
             </p>
-            <Link to="/menu" className="button-primary inline-flex items-center justify-center gap-2 px-8 py-3.5">
+            <button 
+              onClick={handleOrderNow}
+              className="button-primary inline-flex items-center justify-center gap-2 px-8 py-3.5"
+            >
               Order Now <ArrowRight className="w-5 h-5" />
-            </Link>
+            </button>
           </div>
         </section>
         

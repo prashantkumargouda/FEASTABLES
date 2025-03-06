@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { Heart, Star, PlusCircle, ChefHat } from 'lucide-react';
+import { toast } from "sonner";
 
 interface FoodCardProps {
   id: string;
@@ -26,19 +27,33 @@ const FoodCard = ({
   vegetarian
 }: FoodCardProps) => {
   const [isFavorite, setIsFavorite] = useState(false);
+  const [imgError, setImgError] = useState(false);
+  
+  const handleFavoriteClick = () => {
+    setIsFavorite(!isFavorite);
+    toast.success(isFavorite ? "Removed from favorites" : "Added to favorites");
+  };
+
+  const handleAddToCart = () => {
+    toast.success(`${name} added to cart`);
+  };
+
+  // Fallback image in case the original doesn't load
+  const fallbackImage = "https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80";
   
   return (
     <div className="glass-card overflow-hidden group">
       <div className="relative overflow-hidden">
         <img 
-          src={image} 
+          src={imgError ? fallbackImage : image} 
           alt={name} 
           className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+          onError={() => setImgError(true)}
         />
         
         {/* Favorite button */}
         <button 
-          onClick={() => setIsFavorite(!isFavorite)}
+          onClick={handleFavoriteClick}
           className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-sm transition-transform duration-300 hover:scale-110 focus-ring"
           aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
         >
@@ -76,7 +91,10 @@ const FoodCard = ({
         <div className="flex items-center justify-between">
           <div className="text-primary font-semibold">₹{price.toFixed(2)}</div>
           
-          <button className="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-primary/10 text-primary font-medium transition-colors hover:bg-primary hover:text-white focus-ring">
+          <button 
+            onClick={handleAddToCart}
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-primary/10 text-primary font-medium transition-colors hover:bg-primary hover:text-white focus-ring"
+          >
             <PlusCircle className="w-4 h-4" />
             <span>Add</span>
           </button>

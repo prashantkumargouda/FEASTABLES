@@ -1,21 +1,31 @@
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Youtube, Linkedin, MapPin, Phone, Mail } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+  
+  const handleNavigation = (path: string) => {
+    navigate(path);
+    // Scroll to top when navigating
+    window.scrollTo(0, 0);
+  };
   
   return (
     <footer className="bg-secondary pt-16 pb-8">
       <div className="container-width px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           <div>
-            <Link to="/" className="flex items-center gap-2 mb-5">
+            <button 
+              onClick={() => handleNavigation("/")} 
+              className="flex items-center gap-2 mb-5 focus:outline-none"
+            >
               <div className="w-10 h-10 flex items-center justify-center rounded-full bg-primary">
                 <span className="text-white font-bold text-xl">D</span>
               </div>
               <span className="font-bold text-xl">Drone Dabba</span>
-            </Link>
+            </button>
             
             <p className="text-muted-foreground mb-5">
               Reimagining Mumbai's iconic dabba delivery system with cutting-edge drone technology to bring you the best home-cooked meals.
@@ -44,22 +54,44 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-5">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
+                <button 
+                  onClick={() => handleNavigation("/")} 
+                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  Home
+                </button>
               </li>
               <li>
-                <Link to="/menu" className="text-muted-foreground hover:text-primary transition-colors">Food Menu</Link>
+                <button 
+                  onClick={() => handleNavigation("/menu")} 
+                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  Food Menu
+                </button>
               </li>
               <li>
-                <Link to="/cooks" className="text-muted-foreground hover:text-primary transition-colors">Home Cooks</Link>
+                <button 
+                  onClick={() => handleNavigation("/cooks")} 
+                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  Home Cooks
+                </button>
               </li>
               <li>
-                <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">About Us</Link>
+                <button 
+                  onClick={() => handleNavigation("/how-it-works")} 
+                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  How It Works
+                </button>
               </li>
               <li>
-                <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link>
-              </li>
-              <li>
-                <Link to="/how-it-works" className="text-muted-foreground hover:text-primary transition-colors">How It Works</Link>
+                <button 
+                  onClick={() => handleNavigation("/contact")} 
+                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  Contact
+                </button>
               </li>
             </ul>
           </div>
@@ -68,19 +100,44 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-5">Join Us</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/become-a-cook" className="text-muted-foreground hover:text-primary transition-colors">Become a Home Cook</Link>
+                <button 
+                  onClick={() => handleNavigation("/contact")} 
+                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  Become a Home Cook
+                </button>
               </li>
               <li>
-                <Link to="/drone-program" className="text-muted-foreground hover:text-primary transition-colors">Drone Program</Link>
+                <button 
+                  onClick={() => handleNavigation("/how-it-works")} 
+                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  Drone Program
+                </button>
               </li>
               <li>
-                <Link to="/careers" className="text-muted-foreground hover:text-primary transition-colors">Careers</Link>
+                <button 
+                  onClick={() => handleNavigation("/contact")} 
+                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  Careers
+                </button>
               </li>
               <li>
-                <Link to="/affiliate" className="text-muted-foreground hover:text-primary transition-colors">Affiliate Program</Link>
+                <button 
+                  onClick={() => handleNavigation("/contact")} 
+                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  Affiliate Program
+                </button>
               </li>
               <li>
-                <Link to="/investor-relations" className="text-muted-foreground hover:text-primary transition-colors">Investor Relations</Link>
+                <button 
+                  onClick={() => handleNavigation("/contact")} 
+                  className="text-muted-foreground hover:text-primary transition-colors text-left"
+                >
+                  Investor Relations
+                </button>
               </li>
             </ul>
           </div>
@@ -119,9 +176,9 @@ const Footer = () => {
             © {currentYear} Drone Dabba. All rights reserved.
           </div>
           <div className="flex flex-wrap items-center gap-4 md:gap-6">
-            <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
-            <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
-            <Link to="/cookies" className="hover:text-primary transition-colors">Cookie Policy</Link>
+            <button onClick={() => handleNavigation("/contact")} className="hover:text-primary transition-colors">Terms of Service</button>
+            <button onClick={() => handleNavigation("/contact")} className="hover:text-primary transition-colors">Privacy Policy</button>
+            <button onClick={() => handleNavigation("/contact")} className="hover:text-primary transition-colors">Cookie Policy</button>
           </div>
         </div>
       </div>

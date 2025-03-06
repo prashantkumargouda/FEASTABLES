@@ -1,12 +1,13 @@
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import LanguageTransition from './LanguageTransition';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,10 +18,15 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavigation = (path: string) => {
+    navigate(path);
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-3 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl shadow-sm' : 'py-5 bg-transparent'}`}>
       <div className="container-width px-4 md:px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
           <div className="relative w-10 h-10 flex items-center justify-center rounded-full bg-primary">
             <span className="text-white font-bold text-xl">D</span>
             <div className="absolute inset-0 rounded-full border border-primary/30 animate-pulse-slow"></div>
@@ -61,15 +67,15 @@ const Navbar = () => {
         } transition-all duration-300 ease-in-out`}
       >
         <div className="flex flex-col p-6 space-y-6">
-          <Link to="/" className="text-foreground font-medium text-lg px-4 py-2 hover:bg-muted rounded-lg">Home</Link>
-          <Link to="/cooks" className="text-foreground font-medium text-lg px-4 py-2 hover:bg-muted rounded-lg">Cooks</Link>
-          <Link to="/menu" className="text-foreground font-medium text-lg px-4 py-2 hover:bg-muted rounded-lg">Menu</Link>
-          <Link to="/how-it-works" className="text-foreground font-medium text-lg px-4 py-2 hover:bg-muted rounded-lg">How It Works</Link>
-          <Link to="/contact" className="text-foreground font-medium text-lg px-4 py-2 hover:bg-muted rounded-lg">Contact</Link>
+          <button onClick={() => handleNavigation("/")} className="text-left text-foreground font-medium text-lg px-4 py-2 hover:bg-muted rounded-lg">Home</button>
+          <button onClick={() => handleNavigation("/cooks")} className="text-left text-foreground font-medium text-lg px-4 py-2 hover:bg-muted rounded-lg">Cooks</button>
+          <button onClick={() => handleNavigation("/menu")} className="text-left text-foreground font-medium text-lg px-4 py-2 hover:bg-muted rounded-lg">Menu</button>
+          <button onClick={() => handleNavigation("/how-it-works")} className="text-left text-foreground font-medium text-lg px-4 py-2 hover:bg-muted rounded-lg">How It Works</button>
+          <button onClick={() => handleNavigation("/contact")} className="text-left text-foreground font-medium text-lg px-4 py-2 hover:bg-muted rounded-lg">Contact</button>
           
           <div className="pt-4 mt-4 border-t flex flex-col gap-3">
-            <Link to="/login" className="button-outline w-full flex justify-center">Log in</Link>
-            <Link to="/register" className="button-primary w-full flex justify-center">Sign up</Link>
+            <button onClick={() => handleNavigation("/login")} className="button-outline w-full flex justify-center">Log in</button>
+            <button onClick={() => handleNavigation("/register")} className="button-primary w-full flex justify-center">Sign up</button>
           </div>
         </div>
       </div>

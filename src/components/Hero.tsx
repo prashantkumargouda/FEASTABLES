@@ -1,8 +1,14 @@
 
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
+  };
+
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
       {/* Background decorations */}
@@ -27,12 +33,18 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up" style={{ animationDelay: '0.6s' }}>
-              <Link to="/menu" className="button-primary flex items-center justify-center gap-2 px-8 py-3.5">
+              <button 
+                onClick={() => handleNavigation("/menu")} 
+                className="button-primary flex items-center justify-center gap-2 px-8 py-3.5"
+              >
                 Order Now <ArrowRight size={18} />
-              </Link>
-              <Link to="/how-it-works" className="button-outline flex items-center justify-center gap-2 px-8 py-3.5">
+              </button>
+              <button 
+                onClick={() => handleNavigation("/how-it-works")} 
+                className="button-outline flex items-center justify-center gap-2 px-8 py-3.5"
+              >
                 How It Works
-              </Link>
+              </button>
             </div>
             
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 text-sm text-muted-foreground animate-fade-in" style={{ animationDelay: '0.8s' }}>
@@ -84,6 +96,10 @@ const Hero = () => {
                   src="https://images.unsplash.com/photo-1596797038530-2c107aa7ad9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
                   alt="Drone carrying food delivery" 
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80";
+                  }}
                 />
                 
                 <div className="absolute bottom-6 left-6 right-6 glass rounded-xl p-4 backdrop-blur-md bg-white/20">
@@ -108,6 +124,10 @@ const Hero = () => {
                   src="https://images.unsplash.com/photo-1512058564366-18510be2db19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" 
                   alt="Drone flying" 
                   className="w-28 h-20 object-cover rounded-lg"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80";
+                  }}
                 />
               </div>
               
@@ -116,6 +136,10 @@ const Hero = () => {
                   src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" 
                   alt="Home cooked food" 
                   className="w-28 h-20 object-cover rounded-lg"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80";
+                  }}
                 />
               </div>
             </div>
