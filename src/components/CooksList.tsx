@@ -54,7 +54,7 @@ const foodItems = [
     id: '5',
     name: 'Pav Bhaji',
     chef: 'Raj Malhotra',
-    description: 'Mumbai's favorite street food - spicy vegetable mash served with buttered pav bread.',
+    description: 'Mumbai\'s favorite street food - spicy vegetable mash served with buttered pav bread.',
     price: 150,
     cuisine: 'Maharashtrian',
     rating: 4.5,
