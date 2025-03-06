@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { ArrowRight, Drone, Package, Phone, Map, Clock, Check } from 'lucide-react';
+import { ArrowRight, Plane, Package, Phone, Map, Clock, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const HowItWorks = () => {
@@ -30,7 +30,7 @@ const HowItWorks = () => {
     {
       id: 4,
       title: "Drone Pickup",
-      icon: <Drone className="w-6 h-6" />,
+      icon: <Plane className="w-6 h-6" />,
       description: "Our drone arrives at the chef's location and carefully picks up your meal in a temperature-controlled container."
     },
     {
