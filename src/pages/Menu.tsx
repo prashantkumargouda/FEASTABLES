@@ -1,4 +1,3 @@
-
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useState } from 'react';
@@ -103,7 +102,106 @@ const foodItems = [
     price: 260,
     cuisine: 'Bengali',
     rating: 4.8,
-    image: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1626108870272-ede5a1f0587c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    vegetarian: false
+  },
+  {
+    id: '10',
+    name: 'Paneer Butter Masala',
+    chef: 'Priya Sharma',
+    description: 'Creamy curry with soft paneer cubes in a rich tomato-based gravy.',
+    price: 220,
+    cuisine: 'North Indian',
+    rating: 4.7,
+    image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    vegetarian: true
+  },
+  {
+    id: '11',
+    name: 'Mysore Masala Dosa',
+    chef: 'Lakshmi Iyer',
+    description: 'Crispy dosa with spicy red chutney and potato masala, served with sambar.',
+    price: 190,
+    cuisine: 'South Indian',
+    rating: 4.8,
+    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    vegetarian: true
+  },
+  {
+    id: '12',
+    name: 'Mutton Rogan Josh',
+    chef: 'Ahmed Khan',
+    description: 'Kashmiri style mutton curry with aromatic spices and yogurt.',
+    price: 320,
+    cuisine: 'Kashmiri',
+    rating: 4.9,
+    image: 'https://images.unsplash.com/photo-1545247181-516773cae754?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    vegetarian: false
+  },
+  {
+    id: '13',
+    name: 'Idli Sambar',
+    chef: 'Lakshmi Iyer',
+    description: 'Soft steamed rice cakes served with lentil soup and coconut chutney.',
+    price: 120,
+    cuisine: 'South Indian',
+    rating: 4.5,
+    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    vegetarian: true
+  },
+  {
+    id: '14',
+    name: 'Malai Kofta',
+    chef: 'Priya Sharma',
+    description: 'Soft potato and paneer dumplings in a rich creamy gravy.',
+    price: 240,
+    cuisine: 'North Indian',
+    rating: 4.6,
+    image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    vegetarian: true
+  },
+  {
+    id: '15',
+    name: 'Goan Fish Curry',
+    chef: 'Mary Thomas',
+    description: 'Spicy and tangy coconut-based curry with fresh fish.',
+    price: 280,
+    cuisine: 'Goan',
+    rating: 4.8,
+    image: 'https://images.unsplash.com/photo-1614138159368-146b746f9d34?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    vegetarian: false
+  },
+  {
+    id: '16',
+    name: 'Dal Makhani',
+    chef: 'Amar Singh',
+    description: 'Creamy black lentils slow-cooked with butter and spices.',
+    price: 190,
+    cuisine: 'Punjabi',
+    rating: 4.7,
+    image: 'https://images.unsplash.com/photo-1626132827459-e2551fc84de1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    vegetarian: true
+  },
+  {
+    id: '17',
+    name: 'Misal Pav',
+    chef: 'Sanjay Patil',
+    description: 'Spicy sprouted moth beans curry served with bread, onions, and lemon.',
+    price: 140,
+    cuisine: 'Maharashtrian',
+    rating: 4.5,
+    image: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    vegetarian: true
+  },
+  {
+    id: '18',
+    name: 'Chicken Chettinad',
+    chef: 'Lakshmi Iyer',
+    description: 'Spicy chicken curry with roasted spices and coconut.',
+    price: 260,
+    cuisine: 'South Indian',
+    rating: 4.8,
+    image: 'https://images.unsplash.com/photo-1633945488458-1612fc02abe1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     vegetarian: false
   }
 ];

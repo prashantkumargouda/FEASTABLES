@@ -21,10 +21,10 @@ const Footer = () => {
               onClick={() => handleNavigation("/")} 
               className="flex items-center gap-2 mb-5 focus:outline-none"
             >
-              <div className="w-10 h-10 flex items-center justify-center rounded-full bg-primary">
-                <span className="text-white font-bold text-xl">D</span>
-              </div>
-              <span className="font-bold text-xl">Drone Dabba</span>
+              {/* <div className="w-10 h-10 flex items-center justify-center rounded-full bg-primary">
+            
+              </div> */}
+              <span className="font-bold text-xl font-mono w-50">FEASTABLES</span>
             </button>
             
             <p className="text-muted-foreground mb-5">
@@ -115,15 +115,15 @@ const Footer = () => {
                   Drone Program
                 </button>
               </li>
-              <li>
+              {/* <li>
                 <button 
                   onClick={() => handleNavigation("/contact")} 
                   className="text-muted-foreground hover:text-primary transition-colors text-left"
                 >
                   Careers
                 </button>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <button 
                   onClick={() => handleNavigation("/contact")} 
                   className="text-muted-foreground hover:text-primary transition-colors text-left"
@@ -138,7 +138,7 @@ const Footer = () => {
                 >
                   Investor Relations
                 </button>
-              </li>
+              </li> */}
             </ul>
           </div>
           
@@ -147,15 +147,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary mt-0.5" />
-                <span className="text-muted-foreground">123 Innovation Drive, Mumbai Tech Park, Maharashtra, India</span>
+                <span className="text-muted-foreground">123 Innovation Drive, Hyderabad Tech Park, Telangana, India</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary" />
-                <a href="tel:+919876543210" className="text-muted-foreground hover:text-primary transition-colors">+91 987 654 3210</a>
+                <a href="tel:+918279298376" className="text-muted-foreground hover:text-primary transition-colors">+91 7837882</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary" />
-                <a href="mailto:info@dronedabba.com" className="text-muted-foreground hover:text-primary transition-colors">info@dronedabba.com</a>
+                <a href="mailto:info@feastables.com" className="text-muted-foreground hover:text-primary transition-colors">info@feastables.com</a>
               </li>
             </ul>
             
