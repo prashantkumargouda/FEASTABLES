@@ -15,7 +15,7 @@ const cooks = [
     reviews: 124,
     area: 'Andheri West',
     bio: 'Passionate about authentic Punjabi cuisine with 15 years of experience cooking for family and friends.',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    image: 'one.jpeg',
     tags: ['North Indian', 'Punjabi', 'Vegetarian'],
     featured: true
   },
@@ -27,7 +27,7 @@ const cooks = [
     reviews: 98,
     area: 'Bandra East',
     bio: 'Third-generation biryani expert with secret family recipes passed down through generations.',
-    image: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    image: 'three.jpeg',
     tags: ['Biryani', 'Hyderabadi', 'Non-Veg'],
     featured: true
   },
@@ -39,7 +39,7 @@ const cooks = [
     reviews: 87,
     area: 'Borivali',
     bio: 'Specializing in authentic Gujarati thalis with a modern twist. Known for fresh ingredients and balanced flavors.',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    image: 'two.jpeg', 
     tags: ['Gujarati', 'Vegetarian', 'Thali'],
     featured: false
   },
@@ -51,7 +51,7 @@ const cooks = [
     reviews: 73,
     area: 'Dadar',
     bio: 'Born and raised in Mumbai, bringing authentic street food flavors to home-cooked meals.',
-    image: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    image: 'four.jpeg',
     tags: ['Street Food', 'Maharashtrian', 'Spicy'],
     featured: false
   },
@@ -63,7 +63,7 @@ const cooks = [
     reviews: 156,
     area: 'Powai',
     bio: 'Chef with 20 years of experience in authentic Tamil and Kerala cuisine. Specializes in dosas and idlis.',
-    image: 'https://images.unsplash.com/photo-1614644147798-f8c0fc9da7f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    image: 'two.jpeg',
     tags: ['South Indian', 'Tamil', 'Kerala'],
     featured: true
   },
@@ -75,7 +75,7 @@ const cooks = [
     reviews: 112,
     area: 'Bandra West',
     bio: 'Specializes in coastal Kerala cuisine with emphasis on fresh seafood and coconut-based curries.',
-    image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    image: 'four.jpeg',
     tags: ['Kerala', 'Seafood', 'Coastal'],
     featured: false
   }
