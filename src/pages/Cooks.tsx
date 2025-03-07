@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const cooks = [
   {
     id: '1',
-    name: 'Priya Sharma',
+    name: 'Priya',
     specialty: 'North Indian',
     rating: 4.8,
     reviews: 124,
@@ -33,7 +33,7 @@ const cooks = [
   },
   {
     id: '3',
-    name: 'Meera Patel',
+    name: 'Meeras Patel',
     specialty: 'Gujarati',
     rating: 4.6,
     reviews: 87,
