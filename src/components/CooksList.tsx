@@ -30,7 +30,7 @@ const foodItems = [
   },
   {
     id: '3',
-    name: 'Masala Dosa',
+    name:'Idli',
     chef: 'Lakshmi Iyer',
     description: 'Crispy dosa filled with spiced potato masala, served with sambar and coconut chutney.',
     price: 180,
