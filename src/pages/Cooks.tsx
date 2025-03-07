@@ -1,4 +1,3 @@
-
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Search, Star, MapPin, Award } from 'lucide-react';
@@ -127,7 +126,10 @@ const Cooks = () => {
                 {filteredCooks
                   .filter(cook => cook.featured)
                   .map((cook) => (
-                    <div key={cook.id} className="glass-card overflow-hidden group">
+                    <Link 
+                      to={`/cook/${cook.id}`} 
+                      className="glass-card overflow-hidden group"
+                    >
                       <div className="relative h-48">
                         <img 
                           src={cook.image} 
@@ -165,11 +167,11 @@ const Cooks = () => {
                           ))}
                         </div>
                         
-                        <Link to={`/cook/${cook.id}`} className="button-outline w-full flex justify-center items-center py-2">
+                        <div className="button-outline w-full flex justify-center items-center py-2">
                           View Profile
-                        </Link>
+                        </div>
                       </div>
-                    </div>
+                    </Link>
                   ))}
               </div>
             </div>
@@ -180,7 +182,10 @@ const Cooks = () => {
             <h2 className="text-2xl font-bold mb-6">All Cooks</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredCooks.map((cook) => (
-                <div key={cook.id} className="glass-card overflow-hidden group">
+                <Link 
+                  to={`/cook/${cook.id}`} 
+                  className="glass-card overflow-hidden group"
+                >
                   <div className="relative h-48">
                     <img 
                       src={cook.image} 
@@ -220,11 +225,11 @@ const Cooks = () => {
                       ))}
                     </div>
                     
-                    <Link to={`/cook/${cook.id}`} className="button-outline w-full flex justify-center items-center py-2">
+                    <div className="button-outline w-full flex justify-center items-center py-2">
                       View Profile
-                    </Link>
+                    </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
