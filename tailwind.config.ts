@@ -1,5 +1,5 @@
-
-import type { Config } from "tailwindcss";
+import { type Config } from "tailwindcss";
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
 	darkMode: ["class"],
@@ -27,7 +27,17 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					50: "#f0f9ff",
+					100: "#e0f2fe",
+					200: "#bae6fd",
+					300: "#7dd3fc",
+					400: "#38bdf8",
+					500: "#0ea5e9",
+					600: "#0284c7",
+					700: "#0369a1",
+					800: "#075985",
+					900: "#0c4a6e",
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -68,6 +78,9 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			fontFamily: {
+				sans: ["var(--font-sans)", ...fontFamily.sans],
 			},
 			keyframes: {
 				'accordion-down': {
@@ -113,7 +126,17 @@ export default {
 				'text-blur-in': {
 					'0%': { filter: 'blur(5px)', opacity: '0' },
 					'100%': { filter: 'blur(0.01)' }
-				}
+				},
+				'gradient-x': {
+					'0%, 100%': {
+						'background-size': '200% 200%',
+						'background-position': 'left center',
+					},
+					'50%': {
+						'background-size': '200% 200%',
+						'background-position': 'right center',
+					},
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -126,9 +149,10 @@ export default {
 				'pulse-slow': 'pulse-slow 4s ease-in-out infinite',
 				'spin-slow': 'spin-slow 20s linear infinite',
 				'text-blur-out': 'text-blur-out 0.3s ease-out forwards',
-				'text-blur-in': 'text-blur-in 0.3s ease-out forwards'
+				'text-blur-in': 'text-blur-in 0.3s ease-out forwards',
+				'gradient-x': 'gradient-x 15s ease infinite',
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;

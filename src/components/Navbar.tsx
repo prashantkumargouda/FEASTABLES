@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -27,13 +26,12 @@ const Navbar = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-3 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl shadow-sm' : 'py-5 bg-transparent'}`}>
       <div className="container-width px-4 md:px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
-          <div className="relative w-10 h-10 flex items-center justify-center rounded-full bg-primary">
-            <span className="text-white font-bold text-xl">D</span>
-            <div className="absolute inset-0 rounded-full border border-primary/30 animate-pulse-slow"></div>
+          <div className="flex items-center">
+            <img src="FEASTABLES.jpeg" alt="Logo" className="h-20 w-auto" />
           </div>
-          <div className="overflow-hidden">
+          {/* <div className="overflow-hidden">
             <LanguageTransition />
-          </div>
+          </div> */}
         </Link>
         
         <nav className="hidden md:flex items-center gap-6">
@@ -42,12 +40,8 @@ const Navbar = () => {
           <Link to="/menu" className="text-foreground font-medium hover:text-primary transition-colors">Menu</Link>
           <Link to="/how-it-works" className="text-foreground font-medium hover:text-primary transition-colors">How It Works</Link>
           <Link to="/contact" className="text-foreground font-medium hover:text-primary transition-colors">Contact</Link>
+          <Link to="/login" className="text-foreground font-medium hover:text-primary transition-colors">Login</Link>
         </nav>
-        
-        <div className="hidden md:flex items-center gap-4">
-          <Link to="/login" className="button-outline px-5 py-2">Log in</Link>
-          <Link to="/register" className="button-primary px-5 py-2">Sign up</Link>
-        </div>
         
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -73,9 +67,8 @@ const Navbar = () => {
           <button onClick={() => handleNavigation("/how-it-works")} className="text-left text-foreground font-medium text-lg px-4 py-2 hover:bg-muted rounded-lg">How It Works</button>
           <button onClick={() => handleNavigation("/contact")} className="text-left text-foreground font-medium text-lg px-4 py-2 hover:bg-muted rounded-lg">Contact</button>
           
-          <div className="pt-4 mt-4 border-t flex flex-col gap-3">
-            <button onClick={() => handleNavigation("/login")} className="button-outline w-full flex justify-center">Log in</button>
-            <button onClick={() => handleNavigation("/register")} className="button-primary w-full flex justify-center">Sign up</button>
+          <div className="pt-4 mt-4 border-t">
+            <button onClick={() => handleNavigation("/login")} className="text-left text-foreground font-medium text-lg px-4 py-2 hover:bg-muted rounded-lg w-full">Login</button>
           </div>
         </div>
       </div>

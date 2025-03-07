@@ -93,7 +93,7 @@ const Hero = () => {
               <div className="absolute inset-0 glass rounded-3xl overflow-hidden shadow-2xl animate-float">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1596797038530-2c107aa7ad9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                  src="photoooo.jpeg" 
                   alt="Drone carrying food delivery" 
                   className="w-full h-full object-cover"
                   onError={(e) => {
@@ -118,7 +118,7 @@ const Hero = () => {
                 </div>
               </div>
               
-              {/* Floating elements */}
+              {/* Floating elements
               <div className="absolute -top-8 -right-8 glass rounded-2xl p-4 shadow-xl animate-float" style={{ animationDelay: '1s' }}>
                 <img 
                   src="https://images.unsplash.com/photo-1512058564366-18510be2db19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" 
@@ -141,7 +141,7 @@ const Hero = () => {
                     target.src = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80";
                   }}
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
