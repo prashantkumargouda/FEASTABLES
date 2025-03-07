@@ -1,3 +1,4 @@
+
 import { type Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
@@ -119,6 +120,10 @@ export default {
 					'0%': { transform: 'rotate(0deg)' },
 					'100%': { transform: 'rotate(360deg)' }
 				},
+				'spin-fast': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
 				'text-blur-out': {
 					'0%': { filter: 'blur(0.01)' },
 					'100%': { filter: 'blur(5px)', opacity: '0' }
@@ -148,6 +153,7 @@ export default {
 				'float': 'float 6s ease-in-out infinite',
 				'pulse-slow': 'pulse-slow 4s ease-in-out infinite',
 				'spin-slow': 'spin-slow 20s linear infinite',
+				'spin-fast': 'spin-fast 10s linear infinite',
 				'text-blur-out': 'text-blur-out 0.3s ease-out forwards',
 				'text-blur-in': 'text-blur-in 0.3s ease-out forwards',
 				'gradient-x': 'gradient-x 15s ease infinite',
