@@ -60,7 +60,7 @@ const Contact = () => {
               </div>
               <h3 className="font-semibold text-lg mb-2">Phone</h3>
               <p className="text-muted-foreground mb-3">Mon-Fri from 8am to 8pm</p>
-              <a href="tel:+919876543210" className="text-primary font-medium hover:underline">+91 987 654 3210</a>
+              <a href="tel:+919876543210" className="text-primary font-medium hover:underline">+91 89292 67372</a>
             </div>
             
             <div className="glass-card p-6 text-center">
@@ -69,7 +69,7 @@ const Contact = () => {
               </div>
               <h3 className="font-semibold text-lg mb-2">Email</h3>
               <p className="text-muted-foreground mb-3">We'll respond as soon as possible</p>
-              <a href="mailto:info@dronedabba.com" className="text-primary font-medium hover:underline">info@dronedabba.com</a>
+              <a href="mailto:info@feastables.com" className="text-primary font-medium hover:underline">info@feastables.com</a>
             </div>
             
             <div className="glass-card p-6 text-center">
@@ -78,7 +78,7 @@ const Contact = () => {
               </div>
               <h3 className="font-semibold text-lg mb-2">Office</h3>
               <p className="text-muted-foreground mb-3">Visit our headquarters</p>
-              <p className="text-foreground">123 Innovation Drive, Mumbai Tech Park</p>
+              <p className="text-foreground">123 Innovation Drive, Hyderabad Tech Park</p>
             </div>
           </div>
           
