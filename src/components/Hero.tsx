@@ -112,7 +112,7 @@ const Hero = () => {
                     </div>
                     <div>
                       <p className="text-white font-medium">Fastest Delivery</p>
-                      <p className="text-white/70 text-sm">15-30 minutes by drone</p>
+                      <p className="text-white/70 text-sm">5-10 minutes by drone</p>
                     </div>
                   </div>
                 </div>
