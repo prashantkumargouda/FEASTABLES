@@ -142,6 +142,19 @@ export default {
 						'background-position': 'right center',
 					},
 				},
+				'spin-propeller': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'spin-propeller-fast': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'gentle-swing': {
+					'0%, 100%': { transform: 'translateX(-50%) rotate(0deg)' },
+					'25%': { transform: 'translateX(-50%) rotate(2deg)' },
+					'75%': { transform: 'translateX(-50%) rotate(-2deg)' }
+				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -157,6 +170,9 @@ export default {
 				'text-blur-out': 'text-blur-out 0.3s ease-out forwards',
 				'text-blur-in': 'text-blur-in 0.3s ease-out forwards',
 				'gradient-x': 'gradient-x 15s ease infinite',
+				'spin-propeller': 'spin-propeller 3s linear infinite',
+				'spin-propeller-fast': 'spin-propeller-fast 1s linear infinite',
+				'gentle-swing': 'gentle-swing 3s ease-in-out infinite'
 			}
 		}
 	},
