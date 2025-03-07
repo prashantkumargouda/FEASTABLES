@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
 import { useState } from 'react';
+import MultipleDrones from '../components/MultipleDrones';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -41,10 +42,13 @@ const Contact = () => {
   };
   
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Background drones */}
+      <MultipleDrones count={6} opacity={0.1} />
+    
       <Navbar />
       
-      <main className="pt-32 pb-20">
+      <main className="pt-32 pb-20 relative z-10">
         <div className="container-width px-4 md:px-6">
           <div className="max-w-2xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Get in <span className="text-gradient">Touch</span></h1>

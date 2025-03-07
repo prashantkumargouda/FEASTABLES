@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import Features from '../components/Features';
 import CooksList from '../components/CooksList';
 import Footer from '../components/Footer';
+import MultipleDrones from '../components/MultipleDrones';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,9 +31,12 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-hidden relative">
+      {/* Background drones with better animation */}
+      <MultipleDrones count={12} opacity={0.15} />
+      
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <Features />
         <CooksList />
